@@ -7,7 +7,6 @@ public class CameraControl : MonoBehaviour
 {
     float camera_distance = 10;
     float camera_height = 3;
-
     Transform character, focus;
 
     // Start is called before the first frame update

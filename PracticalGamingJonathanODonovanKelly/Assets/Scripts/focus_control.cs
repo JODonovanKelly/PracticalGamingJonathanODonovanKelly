@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class focus_control : MonoBehaviour
 {
-    private float distance_to_crosshair = 10;
+    private float distance_to_crosshair = 3;
     float elevation;
     Transform owner;
     // Start is called before the first frame update
@@ -30,7 +30,6 @@ public class focus_control : MonoBehaviour
 
     internal void starting_setup(Transform character)
     {
-
         owner = character;
     }
 }
