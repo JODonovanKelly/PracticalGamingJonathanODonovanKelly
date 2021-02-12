@@ -41,6 +41,8 @@ public class MovementController : MonoBehaviour
         if (should_turn_left()) turn_left();
         if (should_turn_right()) turn_right();
         if (should_sprint_forward()) sprint_forward();
+        if (should_dodge_left()) dodge_left();
+        if (should_dodge_right()) dodge_right();
         if (should_jump()) jump();
         fireElapsedTime += Time.deltaTime;
         if (Input.GetButton("Fire1") && fireElapsedTime >= fireCooldown)
@@ -84,6 +86,18 @@ public class MovementController : MonoBehaviour
     private void strafe_left()
     {
         transform.position -= current_speed * transform.right * Time.deltaTime;
+    }
+
+
+    private void dodge_left()
+    {
+        transform.position -= current_speed * transform.right * Time.deltaTime * 3;
+    }
+
+
+    private void dodge_right()
+    {
+        transform.position += current_speed * transform.right * Time.deltaTime * 3;
     }
 
     private void sprint_forward()
@@ -131,6 +145,11 @@ public class MovementController : MonoBehaviour
         return Input.GetKey(KeyCode.D);
     }
 
+    private bool should_dodge_right()
+    {
+        return Input.GetKey(KeyCode.K);
+    }
+
     private bool should_jump()
     {
         return Input.GetKey(KeyCode.Space);
@@ -139,6 +158,11 @@ public class MovementController : MonoBehaviour
     private bool should_strafe_left()
     {
         return Input.GetKey(KeyCode.A);
+    }
+
+    private bool should_dodge_left()
+    {
+        return Input.GetKey(KeyCode.J);
     }
 
     private bool should_sprint_forward()
