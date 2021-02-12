@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1005945400131738450, guid: a149a5a8d0648934c899f8b3cef6addd, type: 3}
   CrossHair: {fileID: 4484576887721097758, guid: 8a4e2bce6af8ba64cbb350414225309d, type: 3}
-  fireDelay: 1000
+  fireCooldown: 1
 --- !u!54 &834475570
 Rigidbody:
   m_ObjectHideFlags: 0
